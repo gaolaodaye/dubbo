@@ -24,4 +24,8 @@
 	
 	<dubbo:service interface="com.alibaba.dubbo.demo.DemoService" ref="demoService" />
 	
+	<bean id="imfomantListener" class="com.alibaba.dubbo.infomant.impl.InfomantListenerImpl" />
+	
+	<dubbo:service interface="com.alibaba.dubbo.infomant.api.InfomantListener" ref="imfomantListener" />
+	
 </beans>

@@ -19,25 +19,31 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import com.alibaba.dubbo.demo.DemoService;
+import com.alibaba.dubbo.infomant.api.InfomantListener;
 
 public class DemoAction {
-    
-    private DemoService demoService;
 
-    public void setDemoService(DemoService demoService) {
-        this.demoService = demoService;
-    }
+	private DemoService demoService;
+	private InfomantListener infomantListener;
+
+	public void setDemoService(DemoService demoService) {
+		this.demoService = demoService;
+	}
+
+	public void setInfomantListener(InfomantListener infomantListener) {
+		this.infomantListener = infomantListener;
+	}
 
 	public void start() throws Exception {
-        for (int i = 0; i < Integer.MAX_VALUE; i ++) {
-            try {
-            	String hello = demoService.sayHello("world" + i);
-                System.out.println("[" + new SimpleDateFormat("HH:mm:ss").format(new Date()) + "] " + hello);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-            Thread.sleep(2000);
-        }
+		for (int i = 0; i < 1; i++) {
+			try {
+				infomantListener.sayHello();
+				System.out.println("[" + new SimpleDateFormat("HH:mm:ss").format(new Date()) + "] ");
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			Thread.sleep(2000);
+		}
 	}
 
 }

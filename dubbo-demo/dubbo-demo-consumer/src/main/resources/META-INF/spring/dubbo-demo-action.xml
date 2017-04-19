@@ -22,6 +22,8 @@
 
 	<bean class="com.alibaba.dubbo.demo.consumer.DemoAction" init-method="start">
 		<property name="demoService" ref="demoService" />
+		<property name="infomantListener" ref="infomantListener" />
+		
 	</bean>
 
 </beans>
