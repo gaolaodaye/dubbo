@@ -129,7 +129,7 @@ public class DubboProtocol extends AbstractProtocol {
 		public void disconnected(Channel channel) throws RemotingException {
 			if (logger.isInfoEnabled()) {
 				logger.info("disconected from " + channel.getRemoteAddress() + ",url:" + channel.getUrl());
-				WeChatSend.sendText("5", "gaofeng", "服务器[" + channel.getRemoteAddress().getHostName() + "][" + channel.getRemoteAddress() + "]挂了,检查一下吧");
+				WeChatSend.sendText("5", "gaofeng", "服务器[" + channel.getRemoteAddress().getHostString() + "][" + channel.getRemoteAddress() + "]挂了,检查一下吧");
 			}
 			invoke(channel, Constants.ON_DISCONNECT_KEY);
 		}
