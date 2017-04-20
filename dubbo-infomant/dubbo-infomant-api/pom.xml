@@ -25,4 +25,8 @@
 	<packaging>jar</packaging>
 	<name>${project.artifactId}</name>
 	<description>dubbo-infomant-api</description>
+	<properties>
+		<skip_maven_deploy>false</skip_maven_deploy>
+	</properties>
 </project>
+

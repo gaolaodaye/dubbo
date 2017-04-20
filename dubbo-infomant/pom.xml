@@ -30,4 +30,7 @@
 		<module>dubbo-infomant-impl</module>
 		<module>dubbo-infomant-wx</module>
 	</modules>
+	<properties>
+		<skip_maven_deploy>false</skip_maven_deploy>
+	</properties>
 </project>
